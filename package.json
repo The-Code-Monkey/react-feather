@@ -27,9 +27,6 @@
     "size": "size-limit",
     "release": "yarn version --patch && yarn publish --non-interactive"
   },
-  "engines": {
-    "node": ">=18"
-  },
   "publishConfig": {
     "access": "public"
   },
