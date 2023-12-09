@@ -1,4 +1,4 @@
-name: Deploy Package Version
+name: CI
 on: [push]
 
 jobs:
