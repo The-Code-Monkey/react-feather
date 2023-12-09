@@ -24,7 +24,8 @@
     "build:types": "bun run generate.js",
     "build": "rm -rf dist && mkdir dist && bun run build.ts",
     "prepare": "bun run build",
-    "size": "size-limit"
+    "size": "size-limit",
+    "release": "yarn version --patch && yarn publish --non-interactive"
   },
   "engines": {
     "node": ">=18"
