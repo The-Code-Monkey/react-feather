@@ -28,7 +28,7 @@
     "release": "yarn version --patch && yarn publish --non-interactive"
   },
   "engines": {
-    "node": ">=18"
+    "node": "21.4.0"
   },
   "publishConfig": {
     "access": "public"
