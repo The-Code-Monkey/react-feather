@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Shuffle = (
+const Shuffle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const Shuffle = (
       <line x1='15' y1='15' x2='21' y2='21' />
       <line x1='4' y1='4' x2='9' y2='9' />
     </svg>
-  );
-};
-
+    );
+});
 Shuffle.displayName = 'Shuffle';
 
-export default React.forwardRef(Shuffle);
+export default Shuffle

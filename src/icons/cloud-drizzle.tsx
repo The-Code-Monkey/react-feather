@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const CloudDrizzle = (
+const CloudDrizzle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -28,9 +28,8 @@ const CloudDrizzle = (
       <line x1='12' y1='15' x2='12' y2='17' />
       <path d='M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25' />
     </svg>
-  );
-};
-
+    );
+});
 CloudDrizzle.displayName = 'CloudDrizzle';
 
-export default React.forwardRef(CloudDrizzle);
+export default CloudDrizzle

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ShieldOff = (
+const ShieldOff = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const ShieldOff = (
       <path d='M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38' />
       <line x1='1' y1='1' x2='23' y2='23' />
     </svg>
-  );
-};
-
+    );
+});
 ShieldOff.displayName = 'ShieldOff';
 
-export default React.forwardRef(ShieldOff);
+export default ShieldOff

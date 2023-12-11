@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const MinusSquare = (
+const MinusSquare = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const MinusSquare = (
       <rect x='3' y='3' width='18' height='18' rx='2' ry='2' />
       <line x1='8' y1='12' x2='16' y2='12' />
     </svg>
-  );
-};
-
+    );
+});
 MinusSquare.displayName = 'MinusSquare';
 
-export default React.forwardRef(MinusSquare);
+export default MinusSquare

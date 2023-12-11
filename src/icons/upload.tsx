@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Upload = (
+const Upload = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Upload = (
       <polyline points='17 8 12 3 7 8' />
       <line x1='12' y1='3' x2='12' y2='15' />
     </svg>
-  );
-};
-
+    );
+});
 Upload.displayName = 'Upload';
 
-export default React.forwardRef(Upload);
+export default Upload

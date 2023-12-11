@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Linkedin = (
+const Linkedin = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Linkedin = (
       <rect x='2' y='9' width='4' height='12' />
       <circle cx='4' cy='4' r='2' />
     </svg>
-  );
-};
-
+    );
+});
 Linkedin.displayName = 'Linkedin';
 
-export default React.forwardRef(Linkedin);
+export default Linkedin

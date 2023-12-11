@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ToggleLeft = (
+const ToggleLeft = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const ToggleLeft = (
       <rect x='1' y='5' width='22' height='14' rx='7' ry='7' />
       <circle cx='8' cy='12' r='3' />
     </svg>
-  );
-};
-
+    );
+});
 ToggleLeft.displayName = 'ToggleLeft';
 
-export default React.forwardRef(ToggleLeft);
+export default ToggleLeft

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Pause = (
+const Pause = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Pause = (
       <rect x='6' y='4' width='4' height='16' />
       <rect x='14' y='4' width='4' height='16' />
     </svg>
-  );
-};
-
+    );
+});
 Pause.displayName = 'Pause';
 
-export default React.forwardRef(Pause);
+export default Pause

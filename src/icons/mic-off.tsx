@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const MicOff = (
+const MicOff = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const MicOff = (
       <line x1='12' y1='19' x2='12' y2='23' />
       <line x1='8' y1='23' x2='16' y2='23' />
     </svg>
-  );
-};
-
+    );
+});
 MicOff.displayName = 'MicOff';
 
-export default React.forwardRef(MicOff);
+export default MicOff

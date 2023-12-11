@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const BarChart2 = (
+const BarChart2 = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const BarChart2 = (
       <line x1='12' y1='20' x2='12' y2='4' />
       <line x1='6' y1='20' x2='6' y2='14' />
     </svg>
-  );
-};
-
+    );
+});
 BarChart2.displayName = 'BarChart2';
 
-export default React.forwardRef(BarChart2);
+export default BarChart2

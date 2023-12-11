@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Rewind = (
+const Rewind = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Rewind = (
       <polygon points='11 19 2 12 11 5 11 19' />
       <polygon points='22 19 13 12 22 5 22 19' />
     </svg>
-  );
-};
-
+    );
+});
 Rewind.displayName = 'Rewind';
 
-export default React.forwardRef(Rewind);
+export default Rewind

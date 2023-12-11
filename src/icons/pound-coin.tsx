@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const PoundCoin = (
+const PoundCoin = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -28,9 +28,8 @@ const PoundCoin = (
         strokeWidth='1.5'
       />
     </svg>
-  );
-};
-
+    );
+});
 PoundCoin.displayName = 'PoundCoin';
 
-export default React.forwardRef(PoundCoin);
+export default PoundCoin

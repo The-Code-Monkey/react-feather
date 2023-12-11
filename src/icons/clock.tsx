@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Clock = (
+const Clock = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Clock = (
       <circle cx='12' cy='12' r='10' />
       <polyline points='12 6 12 12 16 14' />
     </svg>
-  );
-};
-
+    );
+});
 Clock.displayName = 'Clock';
 
-export default React.forwardRef(Clock);
+export default Clock

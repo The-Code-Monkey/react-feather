@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Terminal = (
+const Terminal = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Terminal = (
       <polyline points='4 17 10 11 4 5' />
       <line x1='12' y1='19' x2='20' y2='19' />
     </svg>
-  );
-};
-
+    );
+});
 Terminal.displayName = 'Terminal';
 
-export default React.forwardRef(Terminal);
+export default Terminal

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Hash = (
+const Hash = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const Hash = (
       <line x1='10' y1='3' x2='8' y2='21' />
       <line x1='16' y1='3' x2='14' y2='21' />
     </svg>
-  );
-};
-
+    );
+});
 Hash.displayName = 'Hash';
 
-export default React.forwardRef(Hash);
+export default Hash

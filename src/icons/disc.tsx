@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Disc = (
+const Disc = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Disc = (
       <circle cx='12' cy='12' r='10' />
       <circle cx='12' cy='12' r='3' />
     </svg>
-  );
-};
-
+    );
+});
 Disc.displayName = 'Disc';
 
-export default React.forwardRef(Disc);
+export default Disc

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const RotateCw = (
+const RotateCw = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const RotateCw = (
       <polyline points='23 4 23 10 17 10' />
       <path d='M20.49 15a9 9 0 1 1-2.12-9.36L23 10' />
     </svg>
-  );
-};
-
+    );
+});
 RotateCw.displayName = 'RotateCw';
 
-export default React.forwardRef(RotateCw);
+export default RotateCw

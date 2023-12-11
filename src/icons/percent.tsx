@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Percent = (
+const Percent = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Percent = (
       <circle cx='6.5' cy='6.5' r='2.5' />
       <circle cx='17.5' cy='17.5' r='2.5' />
     </svg>
-  );
-};
-
+    );
+});
 Percent.displayName = 'Percent';
 
-export default React.forwardRef(Percent);
+export default Percent

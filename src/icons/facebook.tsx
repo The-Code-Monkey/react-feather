@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Facebook = (
+const Facebook = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Facebook = (
     >
       <path d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' />
     </svg>
-  );
-};
-
+    );
+});
 Facebook.displayName = 'Facebook';
 
-export default React.forwardRef(Facebook);
+export default Facebook

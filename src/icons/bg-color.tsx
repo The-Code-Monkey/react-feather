@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const BgColor = (
+const BgColor = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -46,9 +46,8 @@ const BgColor = (
         strokeLinecap='round'
       />
     </svg>
-  );
-};
-
+    );
+});
 BgColor.displayName = 'BgColor';
 
-export default React.forwardRef(BgColor);
+export default BgColor

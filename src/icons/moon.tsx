@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Moon = (
+const Moon = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Moon = (
     >
       <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' />
     </svg>
-  );
-};
-
+    );
+});
 Moon.displayName = 'Moon';
 
-export default React.forwardRef(Moon);
+export default Moon

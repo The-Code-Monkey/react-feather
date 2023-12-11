@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const CheckCircle = (
+const CheckCircle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const CheckCircle = (
       <path d='M22 11.08V12a10 10 0 1 1-5.93-9.14' />
       <polyline points='22 4 12 14.01 9 11.01' />
     </svg>
-  );
-};
-
+    );
+});
 CheckCircle.displayName = 'CheckCircle';
 
-export default React.forwardRef(CheckCircle);
+export default CheckCircle

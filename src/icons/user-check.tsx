@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const UserCheck = (
+const UserCheck = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const UserCheck = (
       <circle cx='8.5' cy='7' r='4' />
       <polyline points='17 11 19 13 23 9' />
     </svg>
-  );
-};
-
+    );
+});
 UserCheck.displayName = 'UserCheck';
 
-export default React.forwardRef(UserCheck);
+export default UserCheck

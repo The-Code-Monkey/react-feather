@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Bookmark = (
+const Bookmark = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Bookmark = (
     >
       <path d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z' />
     </svg>
-  );
-};
-
+    );
+});
 Bookmark.displayName = 'Bookmark';
 
-export default React.forwardRef(Bookmark);
+export default Bookmark

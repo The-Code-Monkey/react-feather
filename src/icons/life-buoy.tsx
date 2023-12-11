@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const LifeBuoy = (
+const LifeBuoy = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -28,9 +28,8 @@ const LifeBuoy = (
       <line x1='14.83' y1='9.17' x2='18.36' y2='5.64' />
       <line x1='4.93' y1='19.07' x2='9.17' y2='14.83' />
     </svg>
-  );
-};
-
+    );
+});
 LifeBuoy.displayName = 'LifeBuoy';
 
-export default React.forwardRef(LifeBuoy);
+export default LifeBuoy

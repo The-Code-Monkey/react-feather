@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Image = (
+const Image = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Image = (
       <circle cx='8.5' cy='8.5' r='1.5' />
       <polyline points='21 15 16 10 5 21' />
     </svg>
-  );
-};
-
+    );
+});
 Image.displayName = 'Image';
 
-export default React.forwardRef(Image);
+export default Image

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Codepen = (
+const Codepen = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const Codepen = (
       <polyline points='2 15.5 12 8.5 22 15.5' />
       <line x1='12' y1='2' x2='12' y2='8.5' />
     </svg>
-  );
-};
-
+    );
+});
 Codepen.displayName = 'Codepen';
 
-export default React.forwardRef(Codepen);
+export default Codepen

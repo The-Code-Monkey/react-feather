@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const PauseCircle = (
+const PauseCircle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const PauseCircle = (
       <line x1='10' y1='15' x2='10' y2='9' />
       <line x1='14' y1='15' x2='14' y2='9' />
     </svg>
-  );
-};
-
+    );
+});
 PauseCircle.displayName = 'PauseCircle';
 
-export default React.forwardRef(PauseCircle);
+export default PauseCircle

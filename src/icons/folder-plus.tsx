@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const FolderPlus = (
+const FolderPlus = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const FolderPlus = (
       <line x1='12' y1='11' x2='12' y2='17' />
       <line x1='9' y1='14' x2='15' y2='14' />
     </svg>
-  );
-};
-
+    );
+});
 FolderPlus.displayName = 'FolderPlus';
 
-export default React.forwardRef(FolderPlus);
+export default FolderPlus

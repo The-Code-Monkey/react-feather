@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ArrowDown = (
+const ArrowDown = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const ArrowDown = (
       <line x1='12' y1='5' x2='12' y2='19' />
       <polyline points='19 12 12 19 5 12' />
     </svg>
-  );
-};
-
+    );
+});
 ArrowDown.displayName = 'ArrowDown';
 
-export default React.forwardRef(ArrowDown);
+export default ArrowDown

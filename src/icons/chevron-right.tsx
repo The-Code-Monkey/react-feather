@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ChevronRight = (
+const ChevronRight = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const ChevronRight = (
     >
       <polyline points='9 18 15 12 9 6' />
     </svg>
-  );
-};
-
+    );
+});
 ChevronRight.displayName = 'ChevronRight';
 
-export default React.forwardRef(ChevronRight);
+export default ChevronRight

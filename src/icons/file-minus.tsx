@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const FileMinus = (
+const FileMinus = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const FileMinus = (
       <polyline points='14 2 14 8 20 8' />
       <line x1='9' y1='15' x2='15' y2='15' />
     </svg>
-  );
-};
-
+    );
+});
 FileMinus.displayName = 'FileMinus';
 
-export default React.forwardRef(FileMinus);
+export default FileMinus

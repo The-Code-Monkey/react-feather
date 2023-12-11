@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const GitCommit = (
+const GitCommit = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const GitCommit = (
       <line x1='1.05' y1='12' x2='7' y2='12' />
       <line x1='17.01' y1='12' x2='22.96' y2='12' />
     </svg>
-  );
-};
-
+    );
+});
 GitCommit.displayName = 'GitCommit';
 
-export default React.forwardRef(GitCommit);
+export default GitCommit

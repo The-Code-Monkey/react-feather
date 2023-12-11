@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Feather = (
+const Feather = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Feather = (
       <line x1='16' y1='8' x2='2' y2='22' />
       <line x1='17.5' y1='15' x2='9' y2='15' />
     </svg>
-  );
-};
-
+    );
+});
 Feather.displayName = 'Feather';
 
-export default React.forwardRef(Feather);
+export default Feather

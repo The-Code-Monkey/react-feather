@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const MoreVertical = (
+const MoreVertical = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const MoreVertical = (
       <circle cx='12' cy='5' r='1' />
       <circle cx='12' cy='19' r='1' />
     </svg>
-  );
-};
-
+    );
+});
 MoreVertical.displayName = 'MoreVertical';
 
-export default React.forwardRef(MoreVertical);
+export default MoreVertical

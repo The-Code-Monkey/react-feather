@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Umbrella = (
+const Umbrella = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Umbrella = (
     >
       <path d='M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7' />
     </svg>
-  );
-};
-
+    );
+});
 Umbrella.displayName = 'Umbrella';
 
-export default React.forwardRef(Umbrella);
+export default Umbrella

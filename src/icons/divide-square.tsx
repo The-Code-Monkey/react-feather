@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const DivideSquare = (
+const DivideSquare = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const DivideSquare = (
       <line x1='12' y1='16' x2='12' y2='16' />
       <line x1='12' y1='8' x2='12' y2='8' />
     </svg>
-  );
-};
-
+    );
+});
 DivideSquare.displayName = 'DivideSquare';
 
-export default React.forwardRef(DivideSquare);
+export default DivideSquare

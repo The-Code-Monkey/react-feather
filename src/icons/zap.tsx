@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Zap = (
+const Zap = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Zap = (
     >
       <polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2' />
     </svg>
-  );
-};
-
+    );
+});
 Zap.displayName = 'Zap';
 
-export default React.forwardRef(Zap);
+export default Zap

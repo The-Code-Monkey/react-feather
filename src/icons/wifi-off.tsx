@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const WifiOff = (
+const WifiOff = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -28,9 +28,8 @@ const WifiOff = (
       <path d='M8.53 16.11a6 6 0 0 1 6.95 0' />
       <line x1='12' y1='20' x2='12.01' y2='20' />
     </svg>
-  );
-};
-
+    );
+});
 WifiOff.displayName = 'WifiOff';
 
-export default React.forwardRef(WifiOff);
+export default WifiOff

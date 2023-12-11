@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Loader = (
+const Loader = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -29,9 +29,8 @@ const Loader = (
       <line x1='4.93' y1='19.07' x2='7.76' y2='16.24' />
       <line x1='16.24' y1='7.76' x2='19.07' y2='4.93' />
     </svg>
-  );
-};
-
+    );
+});
 Loader.displayName = 'Loader';
 
-export default React.forwardRef(Loader);
+export default Loader

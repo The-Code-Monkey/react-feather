@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ExternalLink = (
+const ExternalLink = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const ExternalLink = (
       <polyline points='15 3 21 3 21 9' />
       <line x1='10' y1='14' x2='21' y2='3' />
     </svg>
-  );
-};
-
+    );
+});
 ExternalLink.displayName = 'ExternalLink';
 
-export default React.forwardRef(ExternalLink);
+export default ExternalLink

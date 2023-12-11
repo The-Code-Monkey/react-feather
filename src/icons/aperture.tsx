@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Aperture = (
+const Aperture = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -28,9 +28,8 @@ const Aperture = (
       <line x1='14.31' y1='16' x2='2.83' y2='16' />
       <line x1='16.62' y1='12' x2='10.88' y2='21.94' />
     </svg>
-  );
-};
-
+    );
+});
 Aperture.displayName = 'Aperture';
 
-export default React.forwardRef(Aperture);
+export default Aperture

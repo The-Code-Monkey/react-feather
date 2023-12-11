@@ -1,8 +1,7 @@
 import * as React from 'react';
-
 import { IconProps } from '../types';
 
-const AlertCircle = (
+const AlertCircle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,8 +24,8 @@ const AlertCircle = (
       <line x1='12' y1='16' x2='12.01' y2='16' />
     </svg>
   );
-};
+});
 
 AlertCircle.displayName = 'AlertCircle';
 
-export default React.forwardRef(AlertCircle);
+export default AlertCircle;

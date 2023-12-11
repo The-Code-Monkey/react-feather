@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Maximize2 = (
+const Maximize2 = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const Maximize2 = (
       <line x1='21' y1='3' x2='14' y2='10' />
       <line x1='3' y1='21' x2='10' y2='14' />
     </svg>
-  );
-};
-
+    );
+});
 Maximize2.displayName = 'Maximize2';
 
-export default React.forwardRef(Maximize2);
+export default Maximize2

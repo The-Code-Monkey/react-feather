@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ZoomOut = (
+const ZoomOut = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const ZoomOut = (
       <line x1='21' y1='21' x2='16.65' y2='16.65' />
       <line x1='8' y1='11' x2='14' y2='11' />
     </svg>
-  );
-};
-
+    );
+});
 ZoomOut.displayName = 'ZoomOut';
 
-export default React.forwardRef(ZoomOut);
+export default ZoomOut

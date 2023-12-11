@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const FastForward = (
+const FastForward = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const FastForward = (
       <polygon points='13 19 22 12 13 5 13 19' />
       <polygon points='2 19 11 12 2 5 2 19' />
     </svg>
-  );
-};
-
+    );
+});
 FastForward.displayName = 'FastForward';
 
-export default React.forwardRef(FastForward);
+export default FastForward

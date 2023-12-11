@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const DivideCircle = (
+const DivideCircle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const DivideCircle = (
       <line x1='12' y1='8' x2='12' y2='8' />
       <circle cx='12' cy='12' r='10' />
     </svg>
-  );
-};
-
+    );
+});
 DivideCircle.displayName = 'DivideCircle';
 
-export default React.forwardRef(DivideCircle);
+export default DivideCircle

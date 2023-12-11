@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const AlignCenter = (
+
+const AlignCenter = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +26,8 @@ const AlignCenter = (
       <line x1='21' y1='14' x2='3' y2='14' />
       <line x1='18' y1='18' x2='6' y2='18' />
     </svg>
-  );
-};
-
+    );
+});
 AlignCenter.displayName = 'AlignCenter';
 
-export default React.forwardRef(AlignCenter);
+export default AlignCenter

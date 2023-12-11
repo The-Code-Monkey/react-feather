@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const BatteryCharging = (
+const BatteryCharging = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const BatteryCharging = (
       <line x1='23' y1='13' x2='23' y2='11' />
       <polyline points='11 6 7 12 13 12 9 18' />
     </svg>
-  );
-};
-
+    );
+});
 BatteryCharging.displayName = 'BatteryCharging';
 
-export default React.forwardRef(BatteryCharging);
+export default BatteryCharging

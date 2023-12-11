@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ShoppingBag = (
+const ShoppingBag = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const ShoppingBag = (
       <line x1='3' y1='6' x2='21' y2='6' />
       <path d='M16 10a4 4 0 0 1-8 0' />
     </svg>
-  );
-};
-
+    );
+});
 ShoppingBag.displayName = 'ShoppingBag';
 
-export default React.forwardRef(ShoppingBag);
+export default ShoppingBag

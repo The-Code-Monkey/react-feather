@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Archive = (
+const Archive = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Archive = (
       <rect x='1' y='3' width='22' height='5' />
       <line x1='10' y1='12' x2='14' y2='12' />
     </svg>
-  );
-};
-
+    );
+});
 Archive.displayName = 'Archive';
 
-export default React.forwardRef(Archive);
+export default Archive

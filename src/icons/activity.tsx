@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Activity = (
+const Activity = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,8 +23,8 @@ const Activity = (
       <polyline points='22 12 18 12 15 21 9 3 6 12 2 12' />
     </svg>
   );
-};
+});
 
 Activity.displayName = 'Activity';
 
-export default React.forwardRef(Activity);
+export default Activity;

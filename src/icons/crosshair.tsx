@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Crosshair = (
+const Crosshair = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const Crosshair = (
       <line x1='12' y1='6' x2='12' y2='2' />
       <line x1='12' y1='22' x2='12' y2='18' />
     </svg>
-  );
-};
-
+    );
+});
 Crosshair.displayName = 'Crosshair';
 
-export default React.forwardRef(Crosshair);
+export default Crosshair

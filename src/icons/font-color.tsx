@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const FontColor = (
+const FontColor = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const FontColor = (
         d='M221.631 109 109.92 392h58.055l24.079-61h127.892l24.079 61h58.055L290.369 109Zm-8.261 168L256 169l42.63 108Z'
       />
     </svg>
-  );
-};
-
+    );
+});
 FontColor.displayName = 'FontColor';
 
-export default React.forwardRef(FontColor);
+export default FontColor

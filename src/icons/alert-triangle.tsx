@@ -1,8 +1,7 @@
 import * as React from 'react';
-
 import { IconProps } from '../types';
 
-const AlertTriangle = (
+const AlertTriangle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,8 +24,8 @@ const AlertTriangle = (
       <line x1='12' y1='17' x2='12.01' y2='17' />
     </svg>
   );
-};
+});
 
 AlertTriangle.displayName = 'AlertTriangle';
 
-export default React.forwardRef(AlertTriangle);
+export default AlertTriangle;

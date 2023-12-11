@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Navigation = (
+const Navigation = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Navigation = (
     >
       <polygon points='3 11 22 2 13 21 11 13 3 11' />
     </svg>
-  );
-};
-
+    );
+});
 Navigation.displayName = 'Navigation';
 
-export default React.forwardRef(Navigation);
+export default Navigation

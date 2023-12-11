@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const CornerDownLeft = (
+const CornerDownLeft = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const CornerDownLeft = (
       <polyline points='9 10 4 15 9 20' />
       <path d='M20 4v7a4 4 0 0 1-4 4H4' />
     </svg>
-  );
-};
-
+    );
+});
 CornerDownLeft.displayName = 'CornerDownLeft';
 
-export default React.forwardRef(CornerDownLeft);
+export default CornerDownLeft

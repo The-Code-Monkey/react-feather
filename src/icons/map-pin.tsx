@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const MapPin = (
+const MapPin = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const MapPin = (
       <path d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z' />
       <circle cx='12' cy='10' r='3' />
     </svg>
-  );
-};
-
+    );
+});
 MapPin.displayName = 'MapPin';
 
-export default React.forwardRef(MapPin);
+export default MapPin

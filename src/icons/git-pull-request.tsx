@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const GitPullRequest = (
+const GitPullRequest = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const GitPullRequest = (
       <path d='M13 6h3a2 2 0 0 1 2 2v7' />
       <line x1='6' y1='9' x2='6' y2='21' />
     </svg>
-  );
-};
-
+    );
+});
 GitPullRequest.displayName = 'GitPullRequest';
 
-export default React.forwardRef(GitPullRequest);
+export default GitPullRequest

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Share = (
+const Share = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Share = (
       <polyline points='16 6 12 2 8 6' />
       <line x1='12' y1='2' x2='12' y2='15' />
     </svg>
-  );
-};
-
+    );
+});
 Share.displayName = 'Share';
 
-export default React.forwardRef(Share);
+export default Share

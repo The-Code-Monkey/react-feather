@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Sliders = (
+const Sliders = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -30,9 +30,8 @@ const Sliders = (
       <line x1='9' y1='8' x2='15' y2='8' />
       <line x1='17' y1='16' x2='23' y2='16' />
     </svg>
-  );
-};
-
+    );
+});
 Sliders.displayName = 'Sliders';
 
-export default React.forwardRef(Sliders);
+export default Sliders

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Scissors = (
+const Scissors = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const Scissors = (
       <line x1='14.47' y1='14.48' x2='20' y2='20' />
       <line x1='8.12' y1='8.12' x2='12' y2='12' />
     </svg>
-  );
-};
-
+    );
+});
 Scissors.displayName = 'Scissors';
 
-export default React.forwardRef(Scissors);
+export default Scissors

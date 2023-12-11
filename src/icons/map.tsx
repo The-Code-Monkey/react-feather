@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Map = (
+const Map = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Map = (
       <line x1='8' y1='2' x2='8' y2='18' />
       <line x1='16' y1='6' x2='16' y2='22' />
     </svg>
-  );
-};
-
+    );
+});
 Map.displayName = 'Map';
 
-export default React.forwardRef(Map);
+export default Map

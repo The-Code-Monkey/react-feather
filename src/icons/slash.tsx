@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Slash = (
+const Slash = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Slash = (
       <circle cx='12' cy='12' r='10' />
       <line x1='4.93' y1='4.93' x2='19.07' y2='19.07' />
     </svg>
-  );
-};
-
+    );
+});
 Slash.displayName = 'Slash';
 
-export default React.forwardRef(Slash);
+export default Slash

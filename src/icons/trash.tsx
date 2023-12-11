@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Trash = (
+const Trash = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Trash = (
       <polyline points='3 6 5 6 21 6' />
       <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2' />
     </svg>
-  );
-};
-
+    );
+});
 Trash.displayName = 'Trash';
 
-export default React.forwardRef(Trash);
+export default Trash

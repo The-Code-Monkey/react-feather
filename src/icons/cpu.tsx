@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Cpu = (
+const Cpu = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -31,9 +31,8 @@ const Cpu = (
       <line x1='1' y1='9' x2='4' y2='9' />
       <line x1='1' y1='14' x2='4' y2='14' />
     </svg>
-  );
-};
-
+    );
+});
 Cpu.displayName = 'Cpu';
 
-export default React.forwardRef(Cpu);
+export default Cpu

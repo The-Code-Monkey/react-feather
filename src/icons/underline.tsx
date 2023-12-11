@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Underline = (
+const Underline = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Underline = (
       <path d='M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3' />
       <line x1='4' y1='21' x2='20' y2='21' />
     </svg>
-  );
-};
-
+    );
+});
 Underline.displayName = 'Underline';
 
-export default React.forwardRef(Underline);
+export default Underline

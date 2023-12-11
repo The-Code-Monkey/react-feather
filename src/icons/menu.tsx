@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Menu = (
+const Menu = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Menu = (
       <line x1='3' y1='6' x2='21' y2='6' />
       <line x1='3' y1='18' x2='21' y2='18' />
     </svg>
-  );
-};
-
+    );
+});
 Menu.displayName = 'Menu';
 
-export default React.forwardRef(Menu);
+export default Menu

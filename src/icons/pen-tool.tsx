@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const PenTool = (
+const PenTool = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const PenTool = (
       <path d='M2 2l7.586 7.586' />
       <circle cx='11' cy='11' r='2' />
     </svg>
-  );
-};
-
+    );
+});
 PenTool.displayName = 'PenTool';
 
-export default React.forwardRef(PenTool);
+export default PenTool

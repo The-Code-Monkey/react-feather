@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const MessageSquare = (
+const MessageSquare = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const MessageSquare = (
     >
       <path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z' />
     </svg>
-  );
-};
-
+    );
+});
 MessageSquare.displayName = 'MessageSquare';
 
-export default React.forwardRef(MessageSquare);
+export default MessageSquare

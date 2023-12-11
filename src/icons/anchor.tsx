@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Anchor = (
+const Anchor = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Anchor = (
       <line x1='12' y1='22' x2='12' y2='8' />
       <path d='M5 12H2a10 10 0 0 0 20 0h-3' />
     </svg>
-  );
-};
-
+    );
+});
 Anchor.displayName = 'Anchor';
 
-export default React.forwardRef(Anchor);
+export default Anchor

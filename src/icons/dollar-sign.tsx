@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const DollarSign = (
+const DollarSign = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const DollarSign = (
       <line x1='12' y1='1' x2='12' y2='23' />
       <path d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' />
     </svg>
-  );
-};
-
+    );
+});
 DollarSign.displayName = 'DollarSign';
 
-export default React.forwardRef(DollarSign);
+export default DollarSign

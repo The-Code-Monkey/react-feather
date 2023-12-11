@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Unlock = (
+const Unlock = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Unlock = (
       <rect x='3' y='11' width='18' height='11' rx='2' ry='2' />
       <path d='M7 11V7a5 5 0 0 1 9.9-1' />
     </svg>
-  );
-};
-
+    );
+});
 Unlock.displayName = 'Unlock';
 
-export default React.forwardRef(Unlock);
+export default Unlock

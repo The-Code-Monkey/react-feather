@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Chrome = (
+const Chrome = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const Chrome = (
       <line x1='3.95' y1='6.06' x2='8.54' y2='14' />
       <line x1='10.88' y1='21.94' x2='15.46' y2='14' />
     </svg>
-  );
-};
-
+    );
+});
 Chrome.displayName = 'Chrome';
 
-export default React.forwardRef(Chrome);
+export default Chrome

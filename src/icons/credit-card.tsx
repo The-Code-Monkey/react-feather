@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const CreditCard = (
+const CreditCard = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const CreditCard = (
       <rect x='1' y='4' width='22' height='16' rx='2' ry='2' />
       <line x1='1' y1='10' x2='23' y2='10' />
     </svg>
-  );
-};
-
+    );
+});
 CreditCard.displayName = 'CreditCard';
 
-export default React.forwardRef(CreditCard);
+export default CreditCard

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Trash2 = (
+const Trash2 = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const Trash2 = (
       <line x1='10' y1='11' x2='10' y2='17' />
       <line x1='14' y1='11' x2='14' y2='17' />
     </svg>
-  );
-};
-
+    );
+});
 Trash2.displayName = 'Trash2';
 
-export default React.forwardRef(Trash2);
+export default Trash2

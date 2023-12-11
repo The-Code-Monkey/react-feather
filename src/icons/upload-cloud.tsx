@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const UploadCloud = (
+const UploadCloud = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const UploadCloud = (
       <path d='M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3' />
       <polyline points='16 16 12 12 8 16' />
     </svg>
-  );
-};
-
+    );
+});
 UploadCloud.displayName = 'UploadCloud';
 
-export default React.forwardRef(UploadCloud);
+export default UploadCloud

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Share2 = (
+const Share2 = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const Share2 = (
       <line x1='8.59' y1='13.51' x2='15.42' y2='17.49' />
       <line x1='15.41' y1='6.51' x2='8.59' y2='10.49' />
     </svg>
-  );
-};
-
+    );
+});
 Share2.displayName = 'Share2';
 
-export default React.forwardRef(Share2);
+export default Share2

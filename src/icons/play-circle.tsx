@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const PlayCircle = (
+const PlayCircle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const PlayCircle = (
       <circle cx='12' cy='12' r='10' />
       <polygon points='10 8 16 12 10 16 10 8' />
     </svg>
-  );
-};
-
+    );
+});
 PlayCircle.displayName = 'PlayCircle';
 
-export default React.forwardRef(PlayCircle);
+export default PlayCircle

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Voicemail = (
+const Voicemail = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Voicemail = (
       <circle cx='18.5' cy='11.5' r='4.5' />
       <line x1='5.5' y1='16' x2='18.5' y2='16' />
     </svg>
-  );
-};
-
+    );
+});
 Voicemail.displayName = 'Voicemail';
 
-export default React.forwardRef(Voicemail);
+export default Voicemail

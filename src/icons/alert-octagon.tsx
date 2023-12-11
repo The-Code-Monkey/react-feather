@@ -1,8 +1,7 @@
 import * as React from 'react';
-
 import { IconProps } from '../types';
 
-const AlertOctagon = (
+const AlertOctagon = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,8 +24,8 @@ const AlertOctagon = (
       <line x1='12' y1='16' x2='12.01' y2='16' />
     </svg>
   );
-};
+});
 
 AlertOctagon.displayName = 'AlertOctagon';
 
-export default React.forwardRef(AlertOctagon);
+export default AlertOctagon;

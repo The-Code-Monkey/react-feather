@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ZapOff = (
+const ZapOff = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const ZapOff = (
       <polyline points='8 8 3 14 12 14 11 22 16 16' />
       <line x1='1' y1='1' x2='23' y2='23' />
     </svg>
-  );
-};
-
+    );
+});
 ZapOff.displayName = 'ZapOff';
 
-export default React.forwardRef(ZapOff);
+export default ZapOff

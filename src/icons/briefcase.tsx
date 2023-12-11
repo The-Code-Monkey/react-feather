@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Briefcase = (
+const Briefcase = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Briefcase = (
       <rect x='2' y='7' width='20' height='14' rx='2' ry='2' />
       <path d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16' />
     </svg>
-  );
-};
-
+    );
+});
 Briefcase.displayName = 'Briefcase';
 
-export default React.forwardRef(Briefcase);
+export default Briefcase

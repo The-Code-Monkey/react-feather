@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const GitMerge = (
+const GitMerge = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const GitMerge = (
       <circle cx='6' cy='6' r='3' />
       <path d='M6 21V9a9 9 0 0 0 9 9' />
     </svg>
-  );
-};
-
+    );
+});
 GitMerge.displayName = 'GitMerge';
 
-export default React.forwardRef(GitMerge);
+export default GitMerge

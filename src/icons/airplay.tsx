@@ -1,8 +1,7 @@
 import * as React from 'react';
-
 import { IconProps } from '../types';
 
-const Airplay = (
+const Airplay = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,8 +23,8 @@ const Airplay = (
       <polygon points='12 15 17 21 7 21 12 15' />
     </svg>
   );
-};
+});
 
 Airplay.displayName = 'Airplay';
 
-export default React.forwardRef(Airplay);
+export default Airplay;

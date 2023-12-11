@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Layout = (
+const Layout = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Layout = (
       <line x1='3' y1='9' x2='21' y2='9' />
       <line x1='9' y1='21' x2='9' y2='9' />
     </svg>
-  );
-};
-
+    );
+});
 Layout.displayName = 'Layout';
 
-export default React.forwardRef(Layout);
+export default Layout

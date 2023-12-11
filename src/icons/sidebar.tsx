@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Sidebar = (
+const Sidebar = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Sidebar = (
       <rect x='3' y='3' width='18' height='18' rx='2' ry='2' />
       <line x1='9' y1='3' x2='9' y2='21' />
     </svg>
-  );
-};
-
+    );
+});
 Sidebar.displayName = 'Sidebar';
 
-export default React.forwardRef(Sidebar);
+export default Sidebar

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const UserPlus = (
+const UserPlus = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const UserPlus = (
       <line x1='20' y1='8' x2='20' y2='14' />
       <line x1='23' y1='11' x2='17' y2='11' />
     </svg>
-  );
-};
-
+    );
+});
 UserPlus.displayName = 'UserPlus';
 
-export default React.forwardRef(UserPlus);
+export default UserPlus

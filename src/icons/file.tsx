@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const File = (
+const File = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const File = (
       <path d='M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z' />
       <polyline points='13 2 13 9 20 9' />
     </svg>
-  );
-};
-
+    );
+});
 File.displayName = 'File';
 
-export default React.forwardRef(File);
+export default File

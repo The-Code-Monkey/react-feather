@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Italic = (
+const Italic = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Italic = (
       <line x1='14' y1='20' x2='5' y2='20' />
       <line x1='15' y1='4' x2='9' y2='20' />
     </svg>
-  );
-};
-
+    );
+});
 Italic.displayName = 'Italic';
 
-export default React.forwardRef(Italic);
+export default Italic

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Grid = (
+const Grid = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const Grid = (
       <rect x='14' y='14' width='7' height='7' />
       <rect x='3' y='14' width='7' height='7' />
     </svg>
-  );
-};
-
+    );
+});
 Grid.displayName = 'Grid';
 
-export default React.forwardRef(Grid);
+export default Grid

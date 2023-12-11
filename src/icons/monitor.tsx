@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Monitor = (
+const Monitor = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Monitor = (
       <line x1='8' y1='21' x2='16' y2='21' />
       <line x1='12' y1='17' x2='12' y2='21' />
     </svg>
-  );
-};
-
+    );
+});
 Monitor.displayName = 'Monitor';
 
-export default React.forwardRef(Monitor);
+export default Monitor

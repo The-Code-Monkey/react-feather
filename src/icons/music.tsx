@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Music = (
+const Music = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Music = (
       <circle cx='6' cy='18' r='3' />
       <circle cx='18' cy='16' r='3' />
     </svg>
-  );
-};
-
+    );
+});
 Music.displayName = 'Music';
 
-export default React.forwardRef(Music);
+export default Music

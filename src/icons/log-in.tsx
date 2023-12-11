@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const LogIn = (
+const LogIn = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const LogIn = (
       <polyline points='10 17 15 12 10 7' />
       <line x1='15' y1='12' x2='3' y2='12' />
     </svg>
-  );
-};
-
+    );
+});
 LogIn.displayName = 'LogIn';
 
-export default React.forwardRef(LogIn);
+export default LogIn

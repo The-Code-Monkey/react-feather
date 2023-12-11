@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Trello = (
+const Trello = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Trello = (
       <rect x='7' y='7' width='3' height='9' />
       <rect x='14' y='7' width='3' height='5' />
     </svg>
-  );
-};
-
+    );
+});
 Trello.displayName = 'Trello';
 
-export default React.forwardRef(Trello);
+export default Trello

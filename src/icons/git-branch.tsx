@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const GitBranch = (
+const GitBranch = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const GitBranch = (
       <circle cx='6' cy='18' r='3' />
       <path d='M18 9a9 9 0 0 1-9 9' />
     </svg>
-  );
-};
-
+    );
+});
 GitBranch.displayName = 'GitBranch';
 
-export default React.forwardRef(GitBranch);
+export default GitBranch

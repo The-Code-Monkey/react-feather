@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Framer = (
+const Framer = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Framer = (
     >
       <path d='M5 16V9h14V2H5l14 14h-7m-7 0l7 7v-7m-7 0h7' />
     </svg>
-  );
-};
-
+    );
+});
 Framer.displayName = 'Framer';
 
-export default React.forwardRef(Framer);
+export default Framer

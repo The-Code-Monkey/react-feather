@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const SkipBack = (
+const SkipBack = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const SkipBack = (
       <polygon points='19 20 9 12 19 4 19 20' />
       <line x1='5' y1='19' x2='5' y2='5' />
     </svg>
-  );
-};
-
+    );
+});
 SkipBack.displayName = 'SkipBack';
 
-export default React.forwardRef(SkipBack);
+export default SkipBack

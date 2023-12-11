@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const VolumeX = (
+const VolumeX = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const VolumeX = (
       <line x1='23' y1='9' x2='17' y2='15' />
       <line x1='17' y1='9' x2='23' y2='15' />
     </svg>
-  );
-};
-
+    );
+});
 VolumeX.displayName = 'VolumeX';
 
-export default React.forwardRef(VolumeX);
+export default VolumeX

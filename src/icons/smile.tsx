@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Smile = (
+const Smile = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const Smile = (
       <line x1='9' y1='9' x2='9.01' y2='9' />
       <line x1='15' y1='9' x2='15.01' y2='9' />
     </svg>
-  );
-};
-
+    );
+});
 Smile.displayName = 'Smile';
 
-export default React.forwardRef(Smile);
+export default Smile

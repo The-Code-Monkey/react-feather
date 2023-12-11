@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const MousePointer = (
+const MousePointer = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const MousePointer = (
       <path d='M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z' />
       <path d='M13 13l6 6' />
     </svg>
-  );
-};
-
+    );
+});
 MousePointer.displayName = 'MousePointer';
 
-export default React.forwardRef(MousePointer);
+export default MousePointer

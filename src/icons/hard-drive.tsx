@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const HardDrive = (
+const HardDrive = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const HardDrive = (
       <line x1='6' y1='16' x2='6.01' y2='16' />
       <line x1='10' y1='16' x2='10.01' y2='16' />
     </svg>
-  );
-};
-
+    );
+});
 HardDrive.displayName = 'HardDrive';
 
-export default React.forwardRef(HardDrive);
+export default HardDrive

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Speaker = (
+const Speaker = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Speaker = (
       <circle cx='12' cy='14' r='4' />
       <line x1='12' y1='6' x2='12.01' y2='6' />
     </svg>
-  );
-};
-
+    );
+});
 Speaker.displayName = 'Speaker';
 
-export default React.forwardRef(Speaker);
+export default Speaker

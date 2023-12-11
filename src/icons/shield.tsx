@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Shield = (
+const Shield = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Shield = (
     >
       <path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' />
     </svg>
-  );
-};
-
+    );
+});
 Shield.displayName = 'Shield';
 
-export default React.forwardRef(Shield);
+export default Shield

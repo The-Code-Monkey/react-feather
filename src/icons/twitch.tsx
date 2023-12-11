@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Twitch = (
+const Twitch = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Twitch = (
     >
       <path d='M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7' />
     </svg>
-  );
-};
-
+    );
+});
 Twitch.displayName = 'Twitch';
 
-export default React.forwardRef(Twitch);
+export default Twitch

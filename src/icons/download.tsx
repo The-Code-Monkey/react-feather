@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Download = (
+const Download = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const Download = (
       <polyline points='7 10 12 15 17 10' />
       <line x1='12' y1='15' x2='12' y2='3' />
     </svg>
-  );
-};
-
+    );
+});
 Download.displayName = 'Download';
 
-export default React.forwardRef(Download);
+export default Download

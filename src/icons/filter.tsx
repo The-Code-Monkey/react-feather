@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Filter = (
+const Filter = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Filter = (
     >
       <polygon points='22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3' />
     </svg>
-  );
-};
-
+    );
+});
 Filter.displayName = 'Filter';
 
-export default React.forwardRef(Filter);
+export default Filter

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const ArrowDownCircle = (
+const ArrowDownCircle = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -24,9 +24,8 @@ const ArrowDownCircle = (
       <polyline points='8 12 12 16 16 12' />
       <line x1='12' y1='8' x2='12' y2='16' />
     </svg>
-  );
-};
-
+    );
+});
 ArrowDownCircle.displayName = 'ArrowDownCircle';
 
-export default React.forwardRef(ArrowDownCircle);
+export default ArrowDownCircle

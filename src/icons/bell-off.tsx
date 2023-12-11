@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const BellOff = (
+const BellOff = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -26,9 +26,8 @@ const BellOff = (
       <path d='M18 8a6 6 0 0 0-9.33-5' />
       <line x1='1' y1='1' x2='23' y2='23' />
     </svg>
-  );
-};
-
+    );
+});
 BellOff.displayName = 'BellOff';
 
-export default React.forwardRef(BellOff);
+export default BellOff

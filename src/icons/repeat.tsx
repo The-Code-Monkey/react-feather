@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Repeat = (
+const Repeat = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -25,9 +25,8 @@ const Repeat = (
       <polyline points='7 23 3 19 7 15' />
       <path d='M21 13v2a4 4 0 0 1-4 4H3' />
     </svg>
-  );
-};
-
+    );
+});
 Repeat.displayName = 'Repeat';
 
-export default React.forwardRef(Repeat);
+export default Repeat

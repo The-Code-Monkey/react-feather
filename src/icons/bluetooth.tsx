@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Bluetooth = (
+const Bluetooth = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -22,9 +22,8 @@ const Bluetooth = (
     >
       <polyline points='6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5' />
     </svg>
-  );
-};
-
+    );
+});
 Bluetooth.displayName = 'Bluetooth';
 
-export default React.forwardRef(Bluetooth);
+export default Bluetooth

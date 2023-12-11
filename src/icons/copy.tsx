@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { IconProps } from '../types';
 
-const Copy = (
+const Copy = React.forwardRef((
   { color = 'currentColor', size = 24, ...rest }: IconProps,
   ref: React.ForwardedRef<SVGSVGElement>
 ) => {
@@ -23,9 +23,8 @@ const Copy = (
       <rect x='9' y='9' width='13' height='13' rx='2' ry='2' />
       <path d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1' />
     </svg>
-  );
-};
-
+    );
+});
 Copy.displayName = 'Copy';
 
-export default React.forwardRef(Copy);
+export default Copy
