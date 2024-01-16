@@ -53,7 +53,7 @@
     "bun-plugin-dts": "0.2.1",
     "bun-types": "1.0.23",
     "fs-extra": "11.2.0",
-    "size-limit": "11.0.1"
+    "size-limit": "11.0.2"
   },
   "gitHead": "7bb2bc7bbce0432773369ca533adf6d1719e877a",
   "dependencies": {
